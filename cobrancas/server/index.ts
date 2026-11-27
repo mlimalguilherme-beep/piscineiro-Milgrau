@@ -29,7 +29,7 @@ import { BillingRobot, recordReminder } from "./robot.ts";
 const ROOT = process.cwd();
 const DATA_DIR = process.env.DATA_DIR || path.join(ROOT, "data");
 const PORT = Number(process.env.PORT || 3000);
-const PRODUCTION = process.env.NODE_ENV === "production";
+const PRODUCTION = process.env.NODE_ENV === "production" || process.argv.includes("--production");
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD?.trim();
 
 if (!ADMIN_PASSWORD) {
